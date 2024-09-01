@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/react";
-import icons from "../../utils/Icons";
+import icons from '../../utils/icons';
 
 const Footer = () => {
   return (
