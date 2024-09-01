@@ -11,7 +11,7 @@ const Home = () => {
             <Header />
             <div className="w-full">
                 <CarouselHome slides={images} />
-                <div className="h-[1000px]"></div>
+                <div className="h-[1000px] bg-red-500"></div>
             </div>
             <Footer />
         </>
