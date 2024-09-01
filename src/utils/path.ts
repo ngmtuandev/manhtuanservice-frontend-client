@@ -4,6 +4,7 @@ const path = {
   SIGN_IN: "/signin",
   SIGN_UP: "/signup",
   PRODUCTS: "/products",
+  ABOUT_US: "/about_us",
   PRODUCT_DETAIL: "/products/:id",
   USER_DETAIL: "/profile",
   USER_CART: "/cart",
