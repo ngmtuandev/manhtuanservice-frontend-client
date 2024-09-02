@@ -26,6 +26,7 @@ const FormCustom = ({ template, onSubmitHandle }: any) => {
   });
 
   const onSubmit = (data: any) => {
+    console.log('data: ', data)
     onSubmitHandle(data)
       .then((status: boolean) => {
         if (status === true) {
@@ -58,9 +59,9 @@ const FormCustom = ({ template, onSubmitHandle }: any) => {
       let errorMessage: string | undefined = undefined;
       if (error) {
         if (typeof error === 'string') {
-          errorMessage = error; // If error is a string, use it directly
+          errorMessage = error;
         } else if (error.message) {
-          errorMessage = `${error.message}`; // If error is a FieldError object, use its message property
+          errorMessage = `${error.message}`;
         }
       }
       return (

@@ -1,12 +1,28 @@
 import { NextUIProvider } from "@nextui-org/react";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const Layout = () => {
-
+  const queryClient = new QueryClient();
   return (
-    <NextUIProvider>
-      <Outlet></Outlet>
-    </NextUIProvider>
+    <QueryClientProvider client={queryClient}>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <NextUIProvider>
+        <Outlet></Outlet>
+      </NextUIProvider>
+    </QueryClientProvider>
   );
 };
 
