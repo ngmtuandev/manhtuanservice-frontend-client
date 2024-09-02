@@ -12,4 +12,5 @@ export { default as Footer } from "./footer/Footer";
 
 // HOME
 export { default as CarouselHome } from "./home/CarouselHome";
+export { default as About } from "./home/About";
 
