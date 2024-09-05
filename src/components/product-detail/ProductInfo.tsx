@@ -18,7 +18,6 @@ const ProductInfo = ({ product }: any) => {
   }
 
 
-  console.log('productDetailInfo : ', +productDetailInfo?.productId!)
   const { varients } = useGetVarient(+productDetailInfo?.productId!);
 
   return (
@@ -35,9 +34,9 @@ const ProductInfo = ({ product }: any) => {
         </div>
       </div>
       <div className="w-full mt-4 font-medium">
-        <h1>Dung lượng: {product?.storage} GB</h1>
+        <h1 className="border-b-1 pb-6">Dung lượng: {product?.storage} GB</h1>
         <div>
-          <div className="flex w-3/5 mt-2">
+          <div className="flex w-3/5 mt-6">
             {
               varients && varients?.map((item: any) => {
                 return <Button
@@ -61,31 +60,17 @@ const ProductInfo = ({ product }: any) => {
 
 
           </div>
-        </div>
-        <p className="text-small mt-4 text-yellow_bright">Miễn phí giao hàng</p>
-
-      </div>
-      <div className="w-full lg:-ml-8 mt-4">
-        <div className="w-full lg:w-5/6 flex items-center justify-around border-b-1 pb-6">
-          <Input
-            type="number"
-            radius="full"
-            variant="bordered"
-            color="warning"
-            label="Số lượng sản phẩm:"
-            placeholder="1.00"
-            labelPlacement="outside"
-            className="w-1/3 text-white"
-          />
-          <Button
-            radius="full"
-            color="warning"
-            className="mt-6 w-2/4 text-white"
-            startContent={<icons.CiShoppingCart size={24} />}
-          // onClick={handleOnClickAdd}
-          >
-            Thêm vào giỏ hàng
-          </Button>
+          <div className="w-full lg:w-5/6 border-b-1 pb-6">
+            <Button
+              radius="full"
+              color="warning"
+              className="mt-6 w-2/4 text-white"
+              startContent={<icons.CiShoppingCart size={24} />}
+            // onClick={handleOnClickAdd}
+            >
+              Thêm vào giỏ hàng
+            </Button>
+          </div>
         </div>
       </div>
       <div className="w-full mt-4">
