@@ -7,3 +7,6 @@ export const handleGetLocalStorage = (key: any) => {
   return localStorage.getItem(key);
 };
 
+export const formatMoney = (money: number) => {
+  return Number(money).toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+};

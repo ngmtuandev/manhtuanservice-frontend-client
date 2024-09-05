@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { Empty } from "antd";
 import LoadingListProduct from "./LoadingListProduct";
@@ -14,8 +14,6 @@ const ListProduct = () => {
   const [isNotFound, setIsNotFound] = useState<boolean>(false);
 
   const [products, _] = useRecoilState(stateProducts);
-
-  // console.log('products =============================', products)
 
 
   useEffect(() => {

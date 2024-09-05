@@ -23,4 +23,10 @@ export { default as ListProduct } from "./product/ListProduct";
 export { default as FilterProduct } from "./product/FilterProduct";
 export { default as LoadingListProduct } from "./product/LoadingListProduct";
 
+// PRODUCT DETAIL
+export { default as SlideProduct } from "./product-detail/SlideProduct";
+export { default as ProductInfo } from "./product-detail/ProductInfo";
+export { default as Detail } from "./product-detail/Detail";
+
+
 
