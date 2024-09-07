@@ -27,6 +27,9 @@ export { default as LoadingListProduct } from "./product/LoadingListProduct";
 export { default as SlideProduct } from "./product-detail/SlideProduct";
 export { default as ProductInfo } from "./product-detail/ProductInfo";
 export { default as Detail } from "./product-detail/Detail";
+export { default as ProductComment } from "./product-detail/ProductComment";
+export { default as CommentItem } from "./product-detail/CommentItem";
+export { default as CommentList } from "./product-detail/CommentList";
 
 
 

@@ -1,5 +1,6 @@
 import { Tabs, Tab } from "@nextui-org/react";
 import ProductInfo from "./ProductInfo";
+import ProductComment from "./ProductComment";
 
 const Detail = ({
     product,
@@ -11,6 +12,9 @@ const Detail = ({
             <Tabs aria-label="Options ">
                 <Tab key="ProductInfo" title="Thông tin sản phẩm" className="">
                     <ProductInfo product={product} />
+                </Tab>
+                <Tab key="ProductRating" title="Đánh giá sản phẩm">
+                    <ProductComment />
                 </Tab>
             </Tabs>
         </div>

@@ -6,7 +6,6 @@ import { stateProductDetail } from "../../store/product-detail.store";
 import { stateVarientCurrent } from "../../store/varient-current.store";
 
 export const useGetDetailProduct = (detailInfo?: TGetDetailProduct) => {
-    console.log('detailInfodetailInfodetailInfodetailInfo     = >     >   ', detailInfo)
     const [product_detail_id] = useRecoilState(stateProductDetail);
     const [varient] = useRecoilState(stateVarientCurrent);
     const { data, isLoading } = useQuery({

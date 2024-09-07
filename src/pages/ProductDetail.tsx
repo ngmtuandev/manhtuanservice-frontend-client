@@ -36,9 +36,6 @@ const ProductDetail = () => {
         setImageProductDetailInfo(detail_product?.data?.varient?.images)
     }, [id, isLoading])
 
-
-    console.log('detail_product : ', detail_product?.data?.varient?.images)
-
     return (
         <>
             <Header />
