@@ -22,7 +22,7 @@ const ProductComment = () => {
     setFindCommentInfo({ parentId: 0, productId: +productDetailInfo?.productId! })
   }, [])
 
-  const { mutate: $createComment, isLoading } = useCreateComment();
+  const { mutate: $createComment } = useCreateComment();
 
   const handleComment = (e: any) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ const ProductComment = () => {
         />
 
         <Button
-          isDisabled={isLoading}
+          // isDisabled={isLoading}
           onClick={handleComment}
           color="warning"
           className="mt-4 text-white text-end"

@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { BreadcrumbsHook, Detail, Footer, Header, SlideProduct } from "../components"
 import path from "../utils/path";
 import { useRecoilState } from "recoil";
