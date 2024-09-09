@@ -24,8 +24,6 @@ const News = () => {
         return [...acc, ...page.data?.results];
     }, []);
 
-    // console.log('news  ---- >', news[0]?.id)
-
     const handleFetchNextPage = () => {
         if (hasNextPage) {
             fetchNextPage();

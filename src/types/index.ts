@@ -6,3 +6,4 @@ export * from './product/TGetDetailProduct';
 export * from './comment/TCreateComment';
 export * from './comment/TFindComment';
 export * from './news/TFindNews';
+export * from './news/TGetDetailNews';

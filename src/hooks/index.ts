@@ -5,3 +5,4 @@ export * from './product/useGetDetailProduct';
 export * from './comment/useCreateComment';
 export * from './comment/useGetComment';
 export * from './comment/useGetCommentChildren';
+export * from './news/useGetItemNews';

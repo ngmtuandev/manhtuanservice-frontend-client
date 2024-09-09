@@ -7,3 +7,4 @@ export * from './comment/create-comment.api';
 export * from './comment/get-comment.api'
 export * from './comment/like-comment.api'
 export * from './news/get-all-news.api';
+export * from './news/get-item-news.api';
