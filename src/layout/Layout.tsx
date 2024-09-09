@@ -1,5 +1,5 @@
 import { NextUIProvider } from "@nextui-org/react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 

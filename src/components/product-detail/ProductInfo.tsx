@@ -1,4 +1,4 @@
-import { Button, Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import icons from "../../utils/icons";
 import { useRecoilState } from "recoil";
 import { stateProductDetail } from "../../store/product-detail.store";

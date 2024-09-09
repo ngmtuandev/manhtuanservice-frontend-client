@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { TGetDetailProduct } from "../../types";
 import { apiDetailProduct } from "../../service";
 import { useRecoilState } from "recoil";

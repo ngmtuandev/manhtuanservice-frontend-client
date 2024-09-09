@@ -27,6 +27,7 @@ const SliderHook = memo(() => {
         maxValue={50000000}
         minValue={0}
         value={value}
+        color="warning"
         onChange={setValueHandle}
         onChangeEnd={handleSliderChangeComplete}
         className="max-w-md"

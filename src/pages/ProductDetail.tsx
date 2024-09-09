@@ -6,6 +6,7 @@ import { stateProductDetail } from "../store/product-detail.store";
 import { useGetDetailProduct } from "../hooks";
 import { useEffect } from "react";
 import { stateImageProductDetail } from "../store/image-product-detail.store";
+import useGetParams from "../hooks/useGetParams";
 
 const breacdCrumValue = [
     {
@@ -23,7 +24,7 @@ const breacdCrumValue = [
 ];
 const ProductDetail = () => {
 
-    let { id } = useParams();
+    let id = useGetParams();
     const [productDetailInfo, setProductDetailInfo] = useRecoilState(stateProductDetail);
     const [_, setImageProductDetailInfo] = useRecoilState(stateImageProductDetail);
 

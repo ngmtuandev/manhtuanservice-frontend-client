@@ -6,3 +6,4 @@ export * from './varient/get-all.api';
 export * from './comment/create-comment.api';
 export * from './comment/get-comment.api'
 export * from './comment/like-comment.api'
+export * from './news/get-all-news.api';

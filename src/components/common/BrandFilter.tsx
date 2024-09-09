@@ -1,5 +1,5 @@
 import { Select, SelectItem } from "@nextui-org/react";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useGetBrand } from "../../hooks";
 import { TBrand } from "../../types";
 import { useRecoilState } from "recoil";

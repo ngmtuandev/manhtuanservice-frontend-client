@@ -6,6 +6,7 @@ export { default as NotFound } from "./common/NotFound";
 export { default as SearchHook } from "./common/SearchHook";
 export { default as SliderHook } from "./common/SliderHook";
 export { default as BrandFilter } from "./common/BrandFilter";
+export { default as MarkdownRenderer } from "./common/MarkdownRenderer";
 
 // HEADER
 export { default as Header } from "./header/Header";
@@ -30,6 +31,11 @@ export { default as Detail } from "./product-detail/Detail";
 export { default as ProductComment } from "./product-detail/ProductComment";
 export { default as CommentItem } from "./product-detail/CommentItem";
 export { default as CommentList } from "./product-detail/CommentList";
+
+// NEWS
+export { default as CardNews } from "./news/CardNews";
+export { default as NewsDetail } from "./news/NewsDetail";
+
 
 
 

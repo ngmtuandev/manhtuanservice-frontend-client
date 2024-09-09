@@ -35,13 +35,13 @@ const Header = () => {
       url: path.PRODUCTS,
     },
     {
-      name: "Đặt thiết kế",
-      url: path.DESIGN,
+      name: "Tin tức",
+      url: path.NEWS,
     },
     {
       name: "Về chúng tôi",
       url: path.ABOUT_US,
-    }
+    },
   ];
 
   return (
@@ -94,10 +94,10 @@ const Header = () => {
               color="foreground"
               onClick={() => {
                 setIsActive(3);
-                navigate(path.DESIGN);
+                navigate(path.NEWS);
               }}
             >
-              Đặt thiết kế
+              Tin tức
             </Link>
           </NavbarItem>
           <NavbarItem>

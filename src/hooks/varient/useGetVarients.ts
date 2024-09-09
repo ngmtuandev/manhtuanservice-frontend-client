@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { apiGetAllVarient } from "../../service";
 import { useRecoilState } from "recoil";
 import { stateProductDetail } from "../../store/product-detail.store";

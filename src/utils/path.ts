@@ -10,7 +10,9 @@ const path = {
   USER_CART: "/cart",
   USER_PAYMENT_VNPAY: "/cart/order/vnpayment",
   PAYMENT_SUCCESS: "/order/vnpayment",
-  DESIGN: "/design"
+  DESIGN: "/design",
+  NEWS: "/news",
+  NEWS_DETAIL: "/news/:id",
 };
 
 export default path;

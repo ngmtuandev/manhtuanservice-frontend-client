@@ -1,11 +1,9 @@
 import FormCustom from "../components/common/FormCustom";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
     const methods = useForm();
     const { watch } = methods;
-    const navigate = useNavigate();
 
     let template = {
         title: "Đăng ký",
