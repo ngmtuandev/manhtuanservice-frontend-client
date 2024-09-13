@@ -89,11 +89,11 @@ const Header = () => {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`${isAcvite === 3 ? "text-yellow_bright" : ""
+              className={`${isAcvite === 2 ? "text-yellow_bright" : ""
                 } font-semibold sm:text-md lg:text-xl mg:mx-2 lg:mx-4 cursor-pointer`}
               color="foreground"
               onClick={() => {
-                setIsActive(3);
+                setIsActive(2);
                 navigate(path.NEWS);
               }}
             >

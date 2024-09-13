@@ -1,4 +1,4 @@
-import { BreadcrumbsHook, Detail, Footer, Header, SlideProduct } from "../components"
+import { BreadcrumbsHook, Detail, Footer, Header, InfomationFooter, SlideProduct } from "../components"
 import path from "../utils/path";
 import { useRecoilState } from "recoil";
 import { stateProductDetail } from "../store/product-detail.store";

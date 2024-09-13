@@ -12,6 +12,7 @@ import icons from '../../utils/icons';
 import { formatDate } from '../../helper/Xfunction';
 import { Image } from '@nextui-org/react';
 import MarkdownRenderer from '../common/MarkdownRenderer';
+import InfomationFooter from '../common/InfomationFooter';
 
 const NewsDetail = () => {
 
@@ -71,6 +72,7 @@ const NewsDetail = () => {
                         <MarkdownRenderer markdownText={news_detail?.content}></MarkdownRenderer>
                     </div>
                 </div>
+                <InfomationFooter></InfomationFooter>
             </div>
             <Footer />
         </>

@@ -7,6 +7,7 @@ export { default as SearchHook } from "./common/SearchHook";
 export { default as SliderHook } from "./common/SliderHook";
 export { default as BrandFilter } from "./common/BrandFilter";
 export { default as MarkdownRenderer } from "./common/MarkdownRenderer";
+export { default as InfomationFooter } from "./common/InfomationFooter";
 
 // HEADER
 export { default as Header } from "./header/Header";
