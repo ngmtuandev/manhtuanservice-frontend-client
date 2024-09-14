@@ -6,3 +6,4 @@ export * from './comment/useCreateComment';
 export * from './comment/useGetComment';
 export * from './comment/useGetCommentChildren';
 export * from './news/useGetItemNews';
+export * from './user/useGetInfoCurrent';

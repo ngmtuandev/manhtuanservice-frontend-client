@@ -1,21 +1,27 @@
-import { Button } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 import icons from "../../utils/icons";
 import { useRecoilState } from "recoil";
 import { stateProductDetail } from "../../store/product-detail.store";
 import { formatMoney } from "../../helper/Xfunction";
 import { useGetVarient } from "../../hooks/varient/useGetVarients";
 import { stateVarientCurrent } from "../../store/varient-current.store";
+import React from "react";
 
 
 const ProductInfo = ({ product }: any) => {
 
   const [productDetailInfo, setProductDetailInfo] = useRecoilState(stateProductDetail);
   const [, setVarient] = useRecoilState(stateVarientCurrent);
+  const [numberProduct, setNumberProduct] = React.useState(1);
 
   const handleChooseVarient = (variantId: number) => {
     setVarient(variantId)
     setProductDetailInfo({ ...productDetailInfo, variantId })
   }
+
+  const handleNumberChange = (newValue: string) => {
+    setNumberProduct(Number(newValue));
+  };
 
 
   const { varients } = useGetVarient(+productDetailInfo?.productId!);
@@ -59,6 +65,22 @@ const ProductInfo = ({ product }: any) => {
             }
 
 
+          </div>
+          <div className="pt-5">
+            <Input
+              type="number"
+              radius="full"
+              variant="bordered"
+              color="warning"
+              label="Số lượng sản phẩm:"
+              placeholder="1.00"
+              labelPlacement="outside"
+              value={`${numberProduct}`}
+              className="w-1/6 text-yellow_bright"
+              onValueChange={(value) => {
+                handleNumberChange(value);
+              }}
+            />
           </div>
           <div className="w-full lg:w-5/6 border-b-1 pb-6">
             <Button

@@ -15,13 +15,21 @@ import logo from '../../assets/logonew_no_bg.png';
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { stateActiveNav } from "../../store/active-nav.store";
+import Cart from "./Cart";
+import Profile from "./Profile";
+import { isLoginState } from "../../store/auth.store";
+import { useEffect } from "react";
+import { useGetInfoCurrent } from "../../hooks";
+import { stateUserInfoCurrent } from "../../store/user-info-current.store";
+import { handleGetLocalStorage } from "../../helper/Xfunction";
+import { USER_LOCAL } from "../../utils/constant";
 
 const Header = () => {
 
   const [isAcvite, setIsActive] = useRecoilState(stateActiveNav);
+  const [isLogin, setIsLogin] = useRecoilState(isLoginState);
 
   let isMenuOpen = false;
-  let isLogin = false;
   const navigate = useNavigate();
 
 
@@ -43,6 +51,23 @@ const Header = () => {
       url: path.ABOUT_US,
     },
   ];
+
+  const { info } = useGetInfoCurrent();
+  const [, setInfo] = useRecoilState(stateUserInfoCurrent);
+
+  console.log('infoinfoinfoinfoinfoinfo : ', info)
+
+  useEffect(() => {
+
+    const checkKeyUser = handleGetLocalStorage(USER_LOCAL.KEY);
+    console.log('checkKeyUser: ', checkKeyUser)
+
+    if (checkKeyUser && info) {
+      setIsLogin(true);
+      setInfo(info?.data);
+    }
+
+  }, [])
 
   return (
     <Navbar
@@ -142,6 +167,12 @@ const Header = () => {
               </Button>
             </NavbarItem>
           </>
+        )}
+        {isLogin && (
+          <NavbarItem className="flex">
+            <Cart />
+            <Profile />
+          </NavbarItem>
         )}
       </NavbarContent>
 

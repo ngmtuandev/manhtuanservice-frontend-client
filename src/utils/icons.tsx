@@ -5,8 +5,10 @@ import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { MdRemoveRedEye } from "react-icons/md";
+import { CiTrash } from "react-icons/ci";
 
 const icons = {
+    CiTrash,
     FaPhoneAlt,
     FaMailBulk,
     SiZalo,

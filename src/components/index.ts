@@ -11,6 +11,8 @@ export { default as InfomationFooter } from "./common/InfomationFooter";
 
 // HEADER
 export { default as Header } from "./header/Header";
+export { default as Cart } from "./header/Cart";
+export { default as Profile } from "./header/Profile";
 
 // FOOTER
 export { default as Footer } from "./footer/Footer";

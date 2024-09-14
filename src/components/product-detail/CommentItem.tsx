@@ -124,10 +124,10 @@ const CommentItem = ({ data, productId, refetchComments }: any) => {
 
             <div className="flex mt-1 items-center gap-5">
                 <button className="text-yellow_bright" onClick={handleLoadReplies}>
-                    {showChildren ? "Ẩn phản hồi" : "Xem thêm phản hồi"}
+                    {showChildren ? "Ẩn phản hồi" : "Xem thêm"}
                 </button>
                 <button className="text-yellow_bright ml-2" onClick={handleReply}>
-                    Phản hồi bình luận này
+                    Phản hồi
                 </button>
             </div>
 

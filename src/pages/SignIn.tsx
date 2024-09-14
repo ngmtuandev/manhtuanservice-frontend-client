@@ -9,6 +9,7 @@ import path from "../utils/path";
 import Swal from "sweetalert2";
 import { useRecoilState } from "recoil";
 import { isLoginState } from "../store/auth.store";
+import { useNavigate } from "react-router-dom";
 
 let template = {
     title: "Đăng nhập",
@@ -56,27 +57,26 @@ let template = {
     },
 };
 
-const SignIn = ({ navigate }: any) => {
+const SignIn = () => {
 
     const { mutate: $login } = useLogin();
     const [_, setIsLogin] = useRecoilState(isLoginState);
+    const navigate = useNavigate();
 
     const onSubmitHandle = async (data: TLogin) => {
         $login(data, {
             onSuccess: (response) => {
                 if (response?.status) {
-                    navigate({
-                        pathname: `/${path.HOME}`,
-                    });
+                    navigate(path.HOME);
                     handleSetLocalStorage(USER_LOCAL.KEY, response?.token);
-                    toast.success("Login successfully");
+                    toast.success("Đăng nhập thành công");
                     setIsLogin(true);
                 } else {
                     Swal.fire({
                         icon: "error",
-                        title: "Oops...",
-                        text: "Login Failure",
-                        footer: '<a href="#">Why do I have this issue?</a>',
+                        title: "Thất Bại",
+                        text: "Đăng nhập thất bại",
+                        footer: '<a href="#">Lý do tại sao bạn đăng nhập thất bại?</a>',
                     });
                     setIsLogin(false);
                 }
@@ -84,9 +84,9 @@ const SignIn = ({ navigate }: any) => {
             onError() {
                 Swal.fire({
                     icon: "error",
-                    title: "Oops...",
-                    text: "Register Failure",
-                    footer: '<a href="#">Why do I have this issue?</a>',
+                    title: "Thất Bại",
+                    text: "Đăng nhập thất bại",
+                    footer: '<a href="#">Lý do tại sao bạn đăng nhập thất bại?</a>',
                 });
             },
         });
