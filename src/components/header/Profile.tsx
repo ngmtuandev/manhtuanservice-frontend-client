@@ -8,17 +8,14 @@ import {
 import { useNavigate } from "react-router-dom";
 import { isLoginState } from "../../store/auth.store";
 import { useRecoilState } from "recoil";
-import { stateUserInfoCurrent } from "../../store/user-info-current.store";
 import { USER_LOCAL } from "../../utils/constant";
+import { useGetInfoCurrent } from "../../hooks";
 
 const Profile = () => {
 
   const navigate = useNavigate();
   const [_, setIsLogin] = useRecoilState(isLoginState);
-  const [info]: any = useRecoilState(stateUserInfoCurrent);
-
-  console.log('info   :   ', info)
-
+  const { info } = useGetInfoCurrent();
 
   return (
     <Dropdown placement="bottom-end">

@@ -11,7 +11,7 @@ const ProductCard = ({ product, className }: any) => {
         shadow="sm"
         isPressable
         className={`h-[24rem] min-w-[14rem] w-[14rem] mx-2 my-2 ${className}`}
-        onPress={() => console.log("item pressed")}
+      // onPress={() => console.log("item pressed")}
       >
         <CardBody className="overflow-visible p-0 group">
           <Image

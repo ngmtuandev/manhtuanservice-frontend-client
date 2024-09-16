@@ -7,3 +7,5 @@ export * from './comment/useGetComment';
 export * from './comment/useGetCommentChildren';
 export * from './news/useGetItemNews';
 export * from './user/useGetInfoCurrent';
+export * from './cart/useGetCartCurrent';
+export * from './cart/useDeleteItemCart';

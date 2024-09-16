@@ -7,3 +7,5 @@ export * from './comment/TCreateComment';
 export * from './comment/TFindComment';
 export * from './news/TFindNews';
 export * from './news/TGetDetailNews';
+export * from './cart/TCart';
+export * from './cart/TDeleteItem';

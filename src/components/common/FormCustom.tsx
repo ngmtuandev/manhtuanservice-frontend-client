@@ -26,7 +26,6 @@ const FormCustom = ({ template, onSubmitHandle }: any) => {
   });
 
   const onSubmit = (data: any) => {
-    console.log('data: ', data)
     onSubmitHandle(data)
       .then((status: boolean) => {
         if (status === true) {

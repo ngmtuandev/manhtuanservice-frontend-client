@@ -20,7 +20,6 @@ import Profile from "./Profile";
 import { isLoginState } from "../../store/auth.store";
 import { useEffect } from "react";
 import { useGetInfoCurrent } from "../../hooks";
-import { stateUserInfoCurrent } from "../../store/user-info-current.store";
 import { handleGetLocalStorage } from "../../helper/Xfunction";
 import { USER_LOCAL } from "../../utils/constant";
 
@@ -53,18 +52,12 @@ const Header = () => {
   ];
 
   const { info } = useGetInfoCurrent();
-  const [, setInfo] = useRecoilState(stateUserInfoCurrent);
-
-  console.log('infoinfoinfoinfoinfoinfo : ', info)
 
   useEffect(() => {
-
     const checkKeyUser = handleGetLocalStorage(USER_LOCAL.KEY);
-    console.log('checkKeyUser: ', checkKeyUser)
 
     if (checkKeyUser && info) {
       setIsLogin(true);
-      setInfo(info?.data);
     }
 
   }, [])

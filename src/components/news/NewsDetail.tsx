@@ -23,8 +23,6 @@ const NewsDetail = () => {
     const id = useGetParams();
     const { news_detail } = useGetItemNews({ newsId: +id! });
 
-    console.log('news_detail: ', news_detail)
-
     useEffect(() => {
         if (news_detail && newsInfo.newsId !== news_detail.id) {
             setBreacdCrumValue([{

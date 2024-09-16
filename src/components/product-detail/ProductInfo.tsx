@@ -6,13 +6,19 @@ import { formatMoney } from "../../helper/Xfunction";
 import { useGetVarient } from "../../hooks/varient/useGetVarients";
 import { stateVarientCurrent } from "../../store/varient-current.store";
 import React from "react";
-
+import { useAddCart } from "../../hooks/cart/useAddCart";
+import { toast } from "react-toastify";
+import { useGetInfoCurrent } from "../../hooks";
 
 const ProductInfo = ({ product }: any) => {
 
   const [productDetailInfo, setProductDetailInfo] = useRecoilState(stateProductDetail);
   const [, setVarient] = useRecoilState(stateVarientCurrent);
   const [numberProduct, setNumberProduct] = React.useState(1);
+  const { info } = useGetInfoCurrent();
+
+  const { mutate: $addCart } = useAddCart();
+
 
   const handleChooseVarient = (variantId: number) => {
     setVarient(variantId)
@@ -20,11 +26,37 @@ const ProductInfo = ({ product }: any) => {
   }
 
   const handleNumberChange = (newValue: string) => {
-    setNumberProduct(Number(newValue));
+    if (+newValue > +productDetailInfo?.info?.varient?.quantity) {
+      toast.warning("Sản phẩm trong kho hiện không đủ");
+    }
+    else {
+      setNumberProduct(Number(newValue));
+    }
   };
 
 
   const { varients } = useGetVarient(+productDetailInfo?.productId!);
+  const handleOnClickAdd = () => {
+    const data = { cart: { user: info?.id! }, cartItem: { quantity: +numberProduct, price: +product?.price * +numberProduct, product: product?.id } }
+
+    $addCart(data, {
+      onSuccess: (response) => {
+        if (response?.data == 1) {
+          toast.warning("Sản phẩm đã có trong giỏ hàng");
+          return;
+        }
+        if (response?.status) {
+          toast.success("Thêm sản phẩm thành công !!");
+        } else {
+          toast.warning("Thêm sản phẩm thất bại !!");
+        }
+      },
+      onError: () => {
+        toast.warning("Thêm sản phẩm thất bại !!");
+      },
+    });
+
+  }
 
   return (
     <div className="flex w-full flex-col">
@@ -88,7 +120,7 @@ const ProductInfo = ({ product }: any) => {
               color="warning"
               className="mt-6 w-2/4 text-white"
               startContent={<icons.CiShoppingCart size={24} />}
-            // onClick={handleOnClickAdd}
+              onClick={handleOnClickAdd}
             >
               Thêm vào giỏ hàng
             </Button>

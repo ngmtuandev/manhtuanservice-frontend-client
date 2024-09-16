@@ -8,7 +8,7 @@ export const useGetInfoCurrent = () => {
         enabled: true,
     });
     return {
-        info: data,
+        info: data?.data,
         isLoading,
     };
 };

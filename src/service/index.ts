@@ -9,3 +9,6 @@ export * from './comment/like-comment.api'
 export * from './news/get-all-news.api';
 export * from './news/get-item-news.api';
 export * from './user/get-info-current.api';
+export * from './cart/get-cart-current.api';
+export * from './cart/add.cart.api';
+export * from './cart/delete-item-cart.api';
