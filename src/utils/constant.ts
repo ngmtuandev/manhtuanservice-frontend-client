@@ -17,3 +17,9 @@ export class NAV_HEADER {
 export class TIME_DEBOUCE {
   static SEARCH_HEADER = 1000;
 }
+
+export class COLOR_VARIENT {
+  static RED = 'đỏ';
+  static WHITE = 'trắng';
+  static BLACK = 'đen';
+}

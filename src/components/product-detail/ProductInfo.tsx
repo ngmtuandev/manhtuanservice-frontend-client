@@ -9,6 +9,7 @@ import React from "react";
 import { useAddCart } from "../../hooks/cart/useAddCart";
 import { toast } from "react-toastify";
 import { useGetInfoCurrent } from "../../hooks";
+import { COLOR_VARIENT } from "../../utils/constant";
 
 const ProductInfo = ({ product }: any) => {
 
@@ -67,14 +68,20 @@ const ProductInfo = ({ product }: any) => {
         </div>
       </div>
       <div className="w-full mt-4 font-medium">
-        <h1>Màu sắc: {product?.color}</h1>
+        <h1 className="flex items-center gap-1">Màu sắc: <div className={`
+                        ${product?.color.toLowerCase() === COLOR_VARIENT.BLACK ? 'w-4 h-4 bg-black rounded-sm' :
+            product?.color.toLowerCase() === COLOR_VARIENT.RED ? 'w-4 h-4 bg-red-600 rounded-sm' :
+              product?.color.toLowerCase() === COLOR_VARIENT.WHITE ? 'w-4 h-4 bg-white rounded-sm border border-black' :
+                ''
+          }`}
+        ></div></h1>
         <div className="flex w-3/5 mt-2 items-center">
         </div>
       </div>
       <div className="w-full mt-4 font-medium">
-        <h1 className="border-b-1 pb-6">Dung lượng: {product?.storage} GB</h1>
+        {product?.storage && product?.storage > 0 ? <h1 className="border-b-1 pb-6">Dung lượng: {product?.storage > 0 && product?.storage} GB</h1> : ''}
         <div>
-          <div className="flex w-3/5 mt-6">
+          <div className="flex w-3/5 mt-4">
             {
               varients && varients?.map((item: any) => {
                 return <Button
@@ -83,12 +90,19 @@ const ProductInfo = ({ product }: any) => {
                     e.preventDefault()
                     handleChooseVarient(item?.id)
                   }}
-                  radius="full"
-                  color="warning"
-                  className="font-medium mx-2 py-2 h-auto min-w-44 text-white"
+                  className="font-medium mx-1 py-1 h-auto bg-gray-400 min-w-36 text-white"
                 >
                   <div>
-                    <div>Dung lượng: {item?.storage}, Màu: {item?.color}</div>
+                    <div className="flex gap-2">{`${+item?.storage > 0 ? `Dung lượng: ${item?.storage} GB, ` : ''}`}<div className="flex gap-1 items-center">
+                      Màu: <div className={`
+                        ${item?.color.toLowerCase() === COLOR_VARIENT.BLACK ? 'w-4 h-4 bg-black rounded-sm' :
+                          item?.color.toLowerCase() === COLOR_VARIENT.RED ? 'w-4 h-4 bg-red-600 rounded-sm' :
+                            item?.color.toLowerCase() === COLOR_VARIENT.WHITE ? 'w-4 h-4 bg-white rounded-sm' :
+                              ''
+                        }`}
+                      ></div>
+                    </div>
+                    </div>
                     <div></div>
                     <div>Giá: {formatMoney(item?.price)}</div>
                   </div>
@@ -104,11 +118,11 @@ const ProductInfo = ({ product }: any) => {
               radius="full"
               variant="bordered"
               color="warning"
-              label="Số lượng sản phẩm:"
+              label="Số lượng:"
               placeholder="1.00"
               labelPlacement="outside"
               value={`${numberProduct}`}
-              className="w-1/6 text-yellow_bright"
+              className="w-1/5 text-yellow_bright"
               onValueChange={(value) => {
                 handleNumberChange(value);
               }}
