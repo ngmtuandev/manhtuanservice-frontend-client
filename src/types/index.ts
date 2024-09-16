@@ -9,3 +9,4 @@ export * from './news/TFindNews';
 export * from './news/TGetDetailNews';
 export * from './cart/TCart';
 export * from './cart/TDeleteItem';
+export * from './pagination/TPagination';

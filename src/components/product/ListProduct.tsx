@@ -4,6 +4,7 @@ import { Empty } from "antd";
 import LoadingListProduct from "./LoadingListProduct";
 import { useRecoilState } from "recoil";
 import { stateProducts } from "../../store/products.store";
+import PaginationCustom from "../common/PaginationCustom";
 
 export type ListProductProps = {
   products: any;
@@ -13,7 +14,7 @@ const ListProduct = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isNotFound, setIsNotFound] = useState<boolean>(false);
 
-  const [products, _] = useRecoilState(stateProducts);
+  const [products, _]: any = useRecoilState(stateProducts);
 
 
   useEffect(() => {
@@ -31,9 +32,9 @@ const ListProduct = () => {
 
   return (
     <div className="flex flex-wrap justify-around">
-      {products &&
-        products.length > 0 &&
-        products.map((product: any, index: number) => (
+      {products?.data &&
+        products?.data?.length > 0 &&
+        products?.data.map((product: any, index: number) => (
           <ProductCard
             key={index}
             product={product}
@@ -41,7 +42,7 @@ const ListProduct = () => {
           />
         ))}
       {isLoading && !isNotFound && <LoadingListProduct />}
-      {isNotFound && products.length <= 0 && (
+      {isNotFound && products?.data.length <= 0 && (
         <Empty
           description={
             <h1 className="text-medium font-medium">
@@ -50,6 +51,7 @@ const ListProduct = () => {
           }
         />
       )}
+      <PaginationCustom total={products?.totalPages}></PaginationCustom>
     </div>
   );
 };

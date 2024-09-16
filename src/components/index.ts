@@ -8,6 +8,7 @@ export { default as SliderHook } from "./common/SliderHook";
 export { default as BrandFilter } from "./common/BrandFilter";
 export { default as MarkdownRenderer } from "./common/MarkdownRenderer";
 export { default as InfomationFooter } from "./common/InfomationFooter";
+export { default as PaginationCustom } from "./common/PaginationCustom";
 
 // HEADER
 export { default as Header } from "./header/Header";
@@ -20,6 +21,7 @@ export { default as Footer } from "./footer/Footer";
 // HOME
 export { default as CarouselHome } from "./home/CarouselHome";
 export { default as About } from "./home/About";
+export { default as ProductsHome } from "./home/ProductsHome";
 
 // PRODUCT
 export { default as ProductCard } from "./product/ProductCard";

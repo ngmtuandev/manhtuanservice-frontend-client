@@ -90,7 +90,7 @@ const ProductInfo = ({ product }: any) => {
                     e.preventDefault()
                     handleChooseVarient(item?.id)
                   }}
-                  className="font-medium mx-1 py-1 h-auto bg-gray-400 min-w-36 text-white"
+                  className="font-medium mx-1 py-1 h-auto bg-gray-500 min-w-36 text-white"
                 >
                   <div>
                     <div className="flex gap-2">{`${+item?.storage > 0 ? `Dung lượng: ${item?.storage} GB, ` : ''}`}<div className="flex gap-1 items-center">

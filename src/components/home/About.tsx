@@ -24,7 +24,7 @@ const About = (className: any) => {
 
   return (
     <div
-      className={`${className} px-container my-16  lg:flex w-full lg:h-[30rem] lg:justify-center lg:items-center`}
+      className={`${className} px-container my-16 ml-2  lg:flex w-full lg:h-[30rem] lg:justify-center lg:items-center`}
     >
       <div className="relative w-3/5 h-[26rem] md:w-3/5 md:h-[24rem] lg:w-1/4 lg:h-full  lg:mr-[10rem] lg:mx-0 lg:my-0 mx-auto my-[4rem] ">
         <div
