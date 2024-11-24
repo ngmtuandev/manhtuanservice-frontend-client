@@ -15,10 +15,10 @@ const ListProduct = () => {
   const [isNotFound, setIsNotFound] = useState<boolean>(false);
 
   const [products, _]: any = useRecoilState(stateProducts);
-
+  console.log("🚀 ~ ListProduct ~ products:", products);
 
   useEffect(() => {
-    if (products.length <= 0) {
+    if (products?.length <= 0) {
       setIsLoading(true);
       const timeout = setTimeout(() => {
         setIsNotFound(true);
@@ -32,9 +32,9 @@ const ListProduct = () => {
 
   return (
     <div className="flex flex-wrap justify-around">
-      {products?.data &&
-        products?.data?.length > 0 &&
-        products?.data.map((product: any, index: number) => (
+      {products &&
+        products?.length > 0 &&
+        products?.map((product: any, index: number) => (
           <ProductCard
             key={index}
             product={product}
@@ -42,7 +42,7 @@ const ListProduct = () => {
           />
         ))}
       {isLoading && !isNotFound && <LoadingListProduct />}
-      {isNotFound && products?.data.length <= 0 && (
+      {isNotFound && products?.length <= 0 && (
         <Empty
           description={
             <h1 className="text-medium font-medium">
